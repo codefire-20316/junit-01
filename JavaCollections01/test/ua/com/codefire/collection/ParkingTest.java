@@ -36,7 +36,7 @@ public class ParkingTest {
         Car remove = parking.remove(number);
         
         assertNotNull("Object is null!", remove);
-        assertEquals(number, remove.getNumber(), "Number not equal!");
+        assertEquals("Number not equal!", number, remove.getNumber());
     }
 
 }
