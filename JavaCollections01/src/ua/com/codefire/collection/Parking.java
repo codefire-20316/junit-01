@@ -6,6 +6,7 @@
 package ua.com.codefire.collection;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -25,6 +26,14 @@ public class Parking {
     }
 
     public Car remove(String number) {
+        Iterator<Car> iterator = carList.iterator();
+        while (iterator.hasNext()) {
+            Car next = iterator.next();
+            if (next.getNumber().equals(number)) {
+                iterator.remove();
+                return next;
+            }
+        }
         return null;
     }
 }
