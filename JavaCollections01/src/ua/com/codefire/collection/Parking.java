@@ -24,6 +24,16 @@ public class Parking {
     public boolean add(Car car) {
         return carList.add(car);
     }
+    
+    public Car find(String number) {
+        for (Car car : carList) {
+            if (car.getNumber().equals(number)) {
+                return car;
+            }
+        }
+        
+        return null;
+    }
 
     public Car remove(String number) {
         Iterator<Car> iterator = carList.iterator();
@@ -34,6 +44,7 @@ public class Parking {
                 return next;
             }
         }
+        
         return null;
     }
 }
